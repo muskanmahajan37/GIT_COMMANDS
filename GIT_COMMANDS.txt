@@ -1,0 +1,145 @@
+git config --global user.name "<set_username>"  // used to set the user name globally
+
+git config --global user.email "<set_emai>"   // used to set the user email globally 
+
+git config --global user.password "<set_password>"  // used to set the git hub password 
+
+git config --list   // to list all the variable of git
+
+git config --global core.editor <set_your_editor_with_full_path> // used to set preferred editiors 
+
+git config --global core.editor "'C:/Sublime Text 3/sublime_text.exe' -w" // used to set the sublime as the core editor (command line approach)
+
+# manual approach to change the editor config   is by opening the conf file inside .git directory and add the line  editor = 'C:/Sublime Text 3/sublime_text.exe' --wait  
+
+git config user.name // displays the username
+
+git config user.email // displays the useremail 
+
+git status // shows if it is a git repository or not 
+
+git init // to initialize the directory to an git local repository 
+
+git add --a // to stage all the files into staging area
+
+git add '<file_name>' // used to add specific file into staging area 
+
+git commit -m "<commit_message>" // used to commit all the changes i.e create a snapshot of present
+
+git commit -a -m "direct commit without staging" // used to commit all the changes i.e create a snapshot of present without staging
+
+git log // this is used to get the log of previous commits
+
+git log -p // used to get the log of previous commits and what is the difference from the previous version
+
+git log -p -3 // used to get log of previous commits and what is the difference from the previous version but only last three three logs
+
+git log --stat // used to get the consolidated log of the commits
+
+git log --pretty=oneline  // used to show the git log in one line
+
+git log --pretty=short // gives the short consolidated message of the log
+
+git log --pretty=full // gives the complete log 
+
+git log --pretty=format:"%h - %an" // gives the %h = hash number and %an = author name 
+
+git log --pretty=format:"%h - %ae" // gives the %h = hash number and %an = author email	 
+
+git log --since=2.day // gives the log of previous two days (flag used is since)
+
+git log --since=2.hours // gives the log  of previous two hours (flag used is since)
+
+git log --since=2.years // gives the log  of previous two years (flag used is since)
+
+rm -rf .git // delete the git repository permanently
+
+git reset HEAD <file_name> // used to unstage file from the staging area
+
+git diff // used to show the difference in the staging area and the working directory
+
+git diff --staged // used to show the difference of the commited object and the staging area object
+
+git rm <file_name> // used to delete the file only after it is not in staging area and is commited
+
+git rm -f <file_nm> // used to delete the file if it is in staging area
+
+git mv <file_name> <renamed_file_name> // used to rename the file name and it is staged 
+
+git rm --cached <file_name> // used to ignore the staged file if it is added to gitignore
+
+git clone <url> // used to clone the remote repository to the local system 
+
+git clone <url> <rename_foler_name> // used to clone the remote repository to the local system and rename it to the required folder name
+
+* git checkout -- <file_name> // used to umodify the changes 
+
+* git checkout -f // used to unmodify all th files simultaneously
+
+*git config --global alias.st status // used to alias the name status to st
+
+*git config --global alias.cm commit // used to alias the commit to cm
+
+*git config --global alias.unstage 'reset HEAD' // used to alias the reset HEAD to unstage
+
+*git config --global alias.last 'log -p -1' // used to alias the last one log to last
+
+git checkout -b <new_branch_name>  // used to create new branch 
+
+git checkout <branch_name> // used to move to that branch
+
+git branch // to see all the available branches in the working directory
+
+git merge --abort // can only be run after the merge has resulted in conflicts.It will abort the merge process and try to reconstruct the pre-merge state
+
+git merge --continue // can only be run after the merge has resulted in conflicts.
+
+git branch -d <branch_name> // The -d option will delete the branch only if it has already been pushed and merged with the remote branch
+
+git branch -D <branch_name> //-D instead if you want to force the branch to be deleted, even if it hasn't been pushed or merged yet
+
+git push origin --delete <remoteBranchName>  // delete branch remotely
+
+git branch // used to show all the available branches
+ 
+git branch -v  // used to show all the branches along with hash and commit message
+
+git branch --merged // lists all the merged branches
+
+git branch --merged master // lists all the merged branches to master
+
+git branch --no--merged  // lists all the branches which are not merged
+
+git branch --no--merged  master // lists all the branches which are not merged to master
+
+git push -u origin <local_branch_name>:<name_to_change_in_remote> // this command is used to push the local branch and rename it to other than the local branch name  
+
+git push -u origin <branch_name> //this is used to push specific branch to the remote repo
+
+git push -d origin <branch_name> //this is used to delete the remote branch 
+
+                                              REMOTE
+                                              -----
+git remote add origin <our_git_hub_link> // used to link the local repository with the remote repository
+
+git remote // displays the git repository name 
+
+git remote -v // shows all the remote repository link
+
+git push -u origin master // used to push all the files from the local system to the remote github server
+
+
+
+										generate SSH key for the permissions
+										------------------------------------
+
+ssh-keygen -t rsa -b 4096 -c "<your_email>" // It will generate  public/private rsa pair
+
+eval $(ssh-agent -s) // used to evaluate the SSH is running in background and it will return the service PID
+
+ssh-add ~/.ssh/id_rsa  //it will add the ssh key to your local system
+
+tail ~/.ssh/id_rsa.pub  // show the public key which should be coppied and should be pasted in the Github  
+
+
+
